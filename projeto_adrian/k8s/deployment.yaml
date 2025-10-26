@@ -1,0 +1,26 @@
+# Define a versão da API do Kubernetes para recursos de aplicação
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: monitor
+spec:
+    # Número de réplicas (pods) que devem estar rodando - apenas 1
+    replicas: 1
+    selector:
+        matchLabels:
+            # Label chave-valor para selecionar pods com app=monitor
+            app: monitor
+template:
+    metadata:
+        labels:
+            # Label que identifica este pod como pertencente ao app monitor
+            app: monitor
+    spec:
+        containers:
+        - name: monitor
+          # Imagem Docker a ser usada - monitor:latest (imagem local)
+          image: monitor:latest
+          imagePullPolicy: Never
+          ports:
+          # Define que o container escuta na porta 3000
+          - containerPort: 3000
