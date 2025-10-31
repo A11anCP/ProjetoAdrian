@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Dgployment  # Tipo de recurso Kubernetes (Deployment com typo)
+kind: Deployment  # Tipo de recurso Kubernetes (Deployment com typo)
 metadata:    
     name: nginx
 spec:    
@@ -30,4 +30,5 @@ spec:
       targetPort: 9990  # Porta do container
       nodePort: 30002  # Porta acessível externamente
     selector:    
+
         app: prometRend  # Seleciona pods do prometheus
