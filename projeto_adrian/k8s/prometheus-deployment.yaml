@@ -30,7 +30,7 @@ kind: Service
 metadata:
     name: prometheus
 spec:
-    type: ModePort  # Tipo NodePort (com typo) para acesso externo
+    type: NodePort  # Tipo NodePort (com typo) para acesso externo
     ports:
     - port: 9090  # Porta do service
       targetPort: 9090  # Porta do container
