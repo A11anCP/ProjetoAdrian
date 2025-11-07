@@ -10,6 +10,9 @@ COPY package*.json ./
 # Executa o comando npm install para instalar todas as dependências do projeto
 RUN npm install
 
+RUN npm ci --only=production
+
+
 # Copia todo o restante do código fonte da aplicação para o diretório /app
 COPY . .
 
