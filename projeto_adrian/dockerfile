@@ -13,6 +13,8 @@ RUN npm install
 # Copia todo o restante do código fonte da aplicação para o diretório /app
 COPY . .
 
+COPY server.js ./
+
 # Informa que o container irá escutar na porta 3000 (documentação)
 EXPOSE 3000
 
